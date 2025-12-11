@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+nav .logo {
+  font-family: "UnifrakturMaguntia", cursive;
+  /* agar font tidak berdempet */
+  letter-spacing: 2.8px;
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  background-color: rgb(153, 81, 19);
+  justify-content: space-around;
+  /* padding: 20px 0; */
+  height: 50px;
+  align-items: center;
+  color: rgb(247, 201, 161);
+  position: relative;
+}
+
+nav ul {
+  display: flex;
+  /* untuk menghilangkan list dekorasi */
+  list-style: none;
+  width: 20%;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  color: rgb(247, 201, 161);
+  text-decoration: nones;
+  inherits: true;
+  font-size: 0.8em;
+}
+
+/* hamburger  */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  position: relative;
+  justify-content: space-between;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  opacity: 0;
+  left: -22px;
+  top: -10px;
+  /* agar mengganti mouse */
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(247, 201, 161);
+  border-radius: 3px;
+}
+.menu-toggle span:nth-child(2) {
+  /* mengatur sumbu x dan y*/
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  /* mengatur sumbu x dan y*/
+  transform-origin: 0 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+  background-color: white;
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+  background-color: white;
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+/* responsive */
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+}
+
+/* ukuran mobile */
+
+@media screen and (max-width: 576px) {
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    z-index: -1;
+    transform: translateX(100%);
+    background-color: rgb(153, 81, 19);
+    opacity: 0;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  nav ul.slide {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  nav.visible {
+    overflow-x: visible;
+  }
+  nav {
+    overflow-x: hidden;
+  }
+}
+
+/* container */
+
+.container {
+  width: 90%;
+  background-color: #eee;
+  margin: 5% auto;
+  padding: 5%;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  line-height: 400%;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+}
