@@ -1,2 +1,2 @@
-in this project i use html css and javascript 
-i create responsive navbar without any feature, just responsive 
+#in this project i use html css3 (flexbox) and javascript 
+#i create responsive navbar without any feature, just responsive 
